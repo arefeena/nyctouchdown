@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Touchdown</title>
+    <meta name="description" content="Tracking friends moving to NYC throughout the year">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="site-title">NYC Touchdown</h1>
+            <p class="site-subtitle">Tracking the journey of friends moving to the Big Apple</p>
+        </header>
+
+        <!-- Timer Section -->
+        <section class="timer-section">
+            <h2 class="section-title">Countdown to NYC</h2>
+            <div class="timers-grid">
+                <div class="timer-card" data-friend="ravi">
+                    <div class="friend-info">
+                        <h3 class="friend-name">Ravi</h3>
+                        <p class="friend-location">From Toronto</p>
+                        <p class="move-date">Moving: September 1, 2025</p>
+                    </div>
+                    <div class="countdown" id="countdown-ravi">
+                        <div class="time-unit">
+                            <span class="time-value" id="ravi-days">0</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="ravi-hours">0</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="ravi-minutes">0</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="ravi-seconds">0</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timer-card" data-friend="arjun">
+                    <div class="friend-info">
+                        <h3 class="friend-name">Arjun</h3>
+                        <p class="friend-location">From Sunnyvale</p>
+                        <p class="move-date">Moving: December 1, 2025</p>
+                    </div>
+                    <div class="countdown" id="countdown-arjun">
+                        <div class="time-unit">
+                            <span class="time-value" id="arjun-days">0</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="arjun-hours">0</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="arjun-minutes">0</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="arjun-seconds">0</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timer-card" data-friend="nick">
+                    <div class="friend-info">
+                        <h3 class="friend-name">Nick</h3>
+                        <p class="friend-location">From Seattle</p>
+                        <p class="move-date">Moving: June 1, 2026</p>
+                    </div>
+                    <div class="countdown" id="countdown-nick">
+                        <div class="time-unit">
+                            <span class="time-value" id="nick-days">0</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="nick-hours">0</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="nick-minutes">0</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="nick-seconds">0</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <h2 class="section-title">Current Locations & Journey to NYC</h2>
+            <div class="map-container">
+                <div id="map" class="map"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
