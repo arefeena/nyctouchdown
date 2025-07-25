@@ -3,21 +3,21 @@ const friendsData = {
     ravi: {
         name: 'Ravi',
         location: 'Toronto',
-        moveDate: new Date('2025-09-01T00:00:00'),
+        moveDate: new Date('2025-09-01T00:00:00Z'),
         coordinates: [43.651070, -79.347015],
         avatar: './assets/ravi_avatar.jpeg'
     },
     arjun: {
         name: 'Arjun',
         location: 'Sunnyvale',
-        moveDate: new Date('2025-12-01T00:00:00'),
+        moveDate: new Date('2025-12-01T00:00:00Z'),
         coordinates: [37.368832, -122.036346],
         avatar: './assets/arjun_avatar.jpeg'
     },
     nick: {
         name: 'Nick',
         location: 'Seattle',
-        moveDate: new Date('2026-06-01T00:00:00'),
+        moveDate: new Date('2026-06-01T00:00:00Z'),
         coordinates: [47.608013, -122.335167],
         avatar: './assets/nick_avatar.jpeg'
     }
