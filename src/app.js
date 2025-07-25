@@ -22,6 +22,7 @@ const friendsData = {
         avatar: './assets/nick_avatar.jpeg'
     }
 };
+const friendMarkers = {};
 
 const nycCoordinates = [40.730610, -73.935242];
 const amarAvatar = './assets/amar_avatar.jpeg';
@@ -90,7 +91,7 @@ function initializeMap() {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
     }).addTo(map);
-    
+
     // Add marker for NYC destination with Amar's avatar
     const amarIcon = createAvatarIcon(amarAvatar, 60);
     const nycMarker = L.marker(nycCoordinates, { icon: amarIcon }).addTo(map);
@@ -124,6 +125,10 @@ function initializeMap() {
         marker.bindPopup(popupContent, {
             maxWidth: 250,
             className: 'custom-popup'
+        });
+        friendMarkers[friendKey] = marker;
+        marker.on('click', function () {
+            animatePlane(friendKey);
         });
     });
 
@@ -174,7 +179,7 @@ function animatePlane(friend) {
     planeElement.style.top = startPoint.y + 'px';
 
     // Calculate rotation angle for plane direction
-    const angle = Math.atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x) * (180 / Math.PI);
+    const angle = Math.atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x) * (180 / Math.PI) + 60;
 
     // Add plane to map container
     mapContainer.appendChild(planeElement);
@@ -192,7 +197,7 @@ function animatePlane(friend) {
                 planeElement.remove();
                 planeElement = null;
             }
-        }, 4500);
+        }, 5000);
     }, 100);
 }
 
@@ -217,7 +222,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 300);
 
             // Animate plane
-            animatePlane(friend);
+            if (friendMarkers[friend]) {
+                friendMarkers[friend].openPopup();
+                animatePlane(friend);
+            }
         });
     });
 
