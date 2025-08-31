@@ -3,21 +3,21 @@ const friendsData = {
     ravi: {
         name: 'Ravi',
         location: 'Toronto',
-        moveDate: new Date('2025-09-01T00:00:00Z'),
+        moveDate: new Date('2025-09-15T00:00:00'),
         coordinates: [43.651070, -79.347015],
         avatar: './assets/ravi_avatar.jpeg'
     },
     arjun: {
         name: 'Arjun',
         location: 'Sunnyvale',
-        moveDate: new Date('2025-12-01T00:00:00Z'),
+        moveDate: new Date('2025-12-01T00:00:00'),
         coordinates: [37.368832, -122.036346],
         avatar: './assets/arjun_avatar.jpeg'
     },
     nick: {
         name: 'Nick',
         location: 'Seattle',
-        moveDate: new Date('2026-06-01T00:00:00Z'),
+        moveDate: new Date('2026-06-01T00:00:00'),
         coordinates: [47.608013, -122.335167],
         avatar: './assets/nick_avatar.jpeg'
     }
@@ -203,6 +203,12 @@ function animatePlane(friend) {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Update friend locations and move dates in the UI
+    Object.keys(friendsData).forEach(friendKey => {
+        const friend = friendsData[friendKey];
+        document.getElementById(`${friendKey}-location`).textContent = `From ${friend.location}`;
+        document.getElementById(`${friendKey}-date`).textContent = `Moving: ${friend.moveDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+    });
     // Start countdown timers
     updateCountdowns();
     setInterval(updateCountdowns, 1000);
